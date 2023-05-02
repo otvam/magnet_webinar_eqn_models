@@ -1,4 +1,4 @@
-# MagNet Challenge Webinar: Equation-based Baseline Models
+# MagNet: Equation-based Baseline Models
 
 ## Introduction
 
