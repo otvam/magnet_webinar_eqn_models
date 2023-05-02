@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains the **slides** and **code** related to the following webinar:
+This repository contains the **slides** and **code** related to the following **webinar**:
 * **2023 MagNet Challenge Webinar: Equation-based Baseline Models**
 * **IEEE PELS Webinar - May 12 2023**
 * **Thomas Guillod** - Dartmouth College
@@ -10,8 +10,8 @@ This repository contains the **slides** and **code** related to the following we
 This webinar focuses on equation-based loss models for soft-magnetic materials:
 * Several models are presented (SE, iGSE, ISE, iGCC, and Stenglein equation).
 * The model performances are evaluated for different frequencies, waveshapes, and temperatures.
-* The advantages and drawbacks of equation-based models with respect to machine learning models are discussed.
-* The software implementation of the iGSE and iGCC is discussed in detail and the pitfalls are highlighted.
+* The advantages and drawbacks of equation-based models and machine learning models are discussed.
+* A MATLAB implementation of the iGSE and iGCC is discussed in detail and the pitfalls are highlighted.
 
 ## Main Files
 
