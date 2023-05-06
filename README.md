@@ -52,7 +52,7 @@ This webinar focuses on equation-based loss models for soft-magnetic materials:
 
 ## Compatibility
 
-* Tested with MATLAB R2021a.
+* Tested with MATLAB R2021a and R2023a.
 * The `optimization_toolbox` is required.
 * The `signal_toolbox` is required.
 * The `statistics_toolbox` is required.
