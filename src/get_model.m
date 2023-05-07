@@ -1,4 +1,4 @@
-function fct_model = get_model(model, map_fit, shape_options, fit_data, fit_options)
+function fct_model = get_model(model, map_fit, range_options, fit_init, fit_options)
 % Parametrize a loss model (iGSE or iGCC) with a measured loss map.
 %
 %    The model parameters are extracted from 50% triangular data (and not from sinusoidal data).
@@ -20,8 +20,8 @@ function fct_model = get_model(model, map_fit, shape_options, fit_data, fit_opti
 %    Parameters:
 %        model (string): name of the loss model to be used
 %        map_fit (struct): loss map containing the measurements used for fitting the model
-%        shape_options (struct): options for computing the loss map range
-%        fit_data (struct): initial value of the fitting parameters
+%        range_options (struct): options for computing the loss map range
+%        fit_init (struct): initial value of the fitting parameters
 %        fit_options (struct): options for the least-square fitting algoritm
 %
 %    Returns:
@@ -36,20 +36,26 @@ B_pkpk_vec = map_fit.B_pkpk_vec;
 p_meas_vec = map_fit.p_meas_vec;
 
 % extract the range (frequency and loss density) of the loss map
-[fct_range, shp_obj] = get_range(f_vec, B_pkpk_vec, shape_options);
+[fct_range, shp_obj] = get_range(f_vec, B_pkpk_vec, range_options);
+
+% plot the range (frequency and loss density) of the loss map
+plot_range(shp_obj)
 
 % get the parametrized fitting function
 switch model
     case 'igse'
-        [x0, fct_param, fct_eval] = get_igse_fit(fit_data);
+        [x0, fct_param, fct_eval] = get_igse_fit(fit_init);
     case 'igcc'
-        [x0, fct_param, fct_eval] = get_igcc_fit(fit_data);
+        [x0, fct_param, fct_eval] = get_igcc_fit(fit_init);
     otherwise
         error('invalid model')
 end
 
 % fit the parametrized fitting function with the provided data
 [param_fit, fct_fit] = get_fit(f_vec, B_pkpk_vec, p_meas_vec, x0, fct_param, fct_eval, fit_options);
+
+% plot the deviation between fitted function and the loss map
+plot_fit(f_vec, B_pkpk_vec, p_meas_vec, param_fit, fct_fit)
 
 % get a function handle describing the fitted loss model
 switch model
@@ -60,11 +66,5 @@ switch model
     otherwise
         error('invalid model')
 end
-
-% plot the range (frequency and loss density) of the loss map
-plot_range(shp_obj)
-
-% plot the deviation between fitted function and the loss map
-plot_fit(f_vec, B_pkpk_vec, p_meas_vec, param_fit, fct_fit)
 
 end

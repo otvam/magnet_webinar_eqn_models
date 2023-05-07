@@ -1,11 +1,11 @@
-function [x0, fct_param, fct_eval] = get_igse_fit(fit_data)
+function [x0, fct_param, fct_eval] = get_igse_fit(fit_init)
 % Define the fitting parameters for the iGSE.
 %
 %    The fitting function consists of standard constant Steinmetz parameters.
 %    The iGSE parameters are extracted from 50% triangular data (and not from sinusoidal data).
 %    
 %    Parameters:
-%        fit_data (struct): initial value of the fitting parameters
+%        fit_init (struct): initial value of the fitting parameters
 %
 %    Returns:
 %        x0 (vector): initial value for the fitted parameters
@@ -16,13 +16,13 @@ function [x0, fct_param, fct_eval] = get_igse_fit(fit_data)
 %    2023 - MIT License.
 
 % get the initial value vector
-x0 = [fit_data.k, fit_data.alpha, fit_data.beta];
+x0 = [fit_init.k, fit_init.alpha, fit_init.beta];
 
 % function transforming the fit vector into a struct
 fct_param = @(x) get_fit_from_x(x);
 
 % function evaluating the fit function for given parameters
-fct_eval = @(fit, f, B_pkpk) get_fit_eval(fit, f, B_pkpk);
+fct_eval = @(fit, f_vec, B_pkpk_vec) get_fit_eval(fit, f_vec, B_pkpk_vec);
 
 end
 

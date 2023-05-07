@@ -1,4 +1,4 @@
-function [fct_range, shp_obj] = get_range(f_vec, B_pkpk_vec, shape_options)
+function [fct_range, shp_obj] = get_range(f_vec, B_pkpk_vec, range_options)
 % Extract the range (frequency and loss density) of a loss map.
 %
 %    An alpha-shape is created with the logarithm of the frequencies and flux densities.
@@ -13,7 +13,7 @@ function [fct_range, shp_obj] = get_range(f_vec, B_pkpk_vec, shape_options)
 %    Parameters:
 %        f_vec (vector): measured frequencies
 %        B_pkpk_vec (vector): measured peak-to-peak flux densities
-%        shape_options (struct): options for computing the loss map range
+%        range_options (struct): options for computing the loss map range
 %
 %    Returns:
 %        fct_range (function): function determining if points are within the loss map range
@@ -24,9 +24,9 @@ function [fct_range, shp_obj] = get_range(f_vec, B_pkpk_vec, shape_options)
 
 
 % extract the options for getting the loss map range
-alpha = shape_options.alpha;
-hole_threshold = shape_options.hole_threshold;
-region_threshold = shape_options.region_threshold;
+alpha = range_options.alpha;
+hole_threshold = range_options.hole_threshold;
+region_threshold = range_options.region_threshold;
 
 % shape object describing the loss map range
 shp_obj = alphaShape(...

@@ -1,11 +1,11 @@
-function [x0, fct_param, fct_eval] = get_igcc_fit(fit_data)
+function [x0, fct_param, fct_eval] = get_igcc_fit(fit_init)
 % Define the fitting parameters for the iGCC.
 %
 %    The fitted function consists of frequency dependent Steinmetz parameters.
 %    The iGCC parameters are extracted from 50% triangular data (and not from sinusoidal data).
 %    
 %    Parameters:
-%        fit_data (struct): initial value of the fitting parameters
+%        fit_init (struct): initial value of the fitting parameters
 %
 %    Returns:
 %        x0 (vector): initial value for the fitted parameters
@@ -16,13 +16,13 @@ function [x0, fct_param, fct_eval] = get_igcc_fit(fit_data)
 %    2023 - MIT License.
 
 % get the initial value vector
-x0 = [fit_data.lambda_vec, fit_data.beta_vec];
+x0 = [fit_init.lambda_vec, fit_init.beta_vec];
 
 % function transforming the fit vector into a struct
 fct_param = @(x) get_fit_from_x(x);
 
 % function evaluating the fit function for given parameters
-fct_eval = @(fit, f, B_pkpk) get_fit_eval(fit, f, B_pkpk);
+fct_eval = @(fit, f_vec, B_pkpk_vec) get_fit_eval(fit, f_vec, B_pkpk_vec);
 
 end
 
@@ -40,7 +40,7 @@ fit.beta_vec = x(5:8);
 
 end
 
-function p_fit = get_fit_eval(fit, f, B_pkpk)
+function p_fit = get_fit_eval(fit, f_vec, B_pkpk_vec)
 % Function evaluating the fit function for given parameters.
 %    
 %    Parameters:
@@ -56,10 +56,10 @@ lambda_vec = fit.lambda_vec;
 beta_vec = fit.beta_vec;
 
 % compute the frequency dependent Steinmetz parameters
-lambda = 10.^polyval(lambda_vec, log10(f));
-beta = polyval(beta_vec, log10(f));
+lambda = 10.^polyval(lambda_vec, log10(f_vec));
+beta = polyval(beta_vec, log10(f_vec));
 
 % get the Steinmetz equation
-p_fit = lambda.*(B_pkpk.^beta);
+p_fit = lambda.*(B_pkpk_vec.^beta);
 
 end
