@@ -29,6 +29,7 @@ fct_model = get_model(model, map_fit, range_options, fit_init, fit_options);
 
 % evaluate a loss model and compare the results with the measurements
 map_eval = load('data/N87_25C_eval.mat');
-get_eval(map_eval, fct_model);
+map_eval = get_eval(map_eval, fct_model);
+save('data/N87_25C_res_igse.mat', '-struct', 'map_eval');
 
 end
