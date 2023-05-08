@@ -15,8 +15,9 @@ tri = shp_obj.alphaTriangulation;
 % plot the shape representing the range and the data points
 figure('name', 'Fitting Range')
 ax = axes();
-triplot(tri, f, B);
+triplot(tri, f, B, 'k');
 hold('on')
+patch('Faces',tri,'Vertices', [f, B],'FaceColor','g', 'FaceAlpha', 0.2)
 plot(f, B, 'or')
 ax.XScale = 'log';
 ax.YScale = 'log';
