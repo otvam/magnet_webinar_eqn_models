@@ -1,5 +1,5 @@
 function plot_range(shp_obj)
-% Plot the range (frequency and loss density) of a loss map.
+% Plot the range (frequency and flux density) of a loss map.
 %
 %    Parameters:
 %        shp_obj (object): shape object representing the loss map range

@@ -35,10 +35,10 @@ f_vec = map_fit.f_vec;
 B_pkpk_vec = map_fit.B_pkpk_vec;
 p_meas_vec = map_fit.p_meas_vec;
 
-% extract the range (frequency and loss density) of the loss map
+% extract the range (frequency and flux density) of the loss map
 [fct_range, shp_obj] = get_range(f_vec, B_pkpk_vec, range_options);
 
-% plot the range (frequency and loss density) of the loss map
+% plot the range (frequency and flux density) of the loss map
 plot_range(shp_obj)
 
 % get the parametrized fitting function

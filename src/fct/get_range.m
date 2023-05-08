@@ -1,5 +1,5 @@
 function [fct_range, shp_obj] = get_range(f_vec, B_pkpk_vec, range_options)
-% Extract the range (frequency and loss density) of a loss map.
+% Extract the range (frequency and flux density) of a loss map.
 %
 %    An alpha-shape is created with the logarithm of the frequencies and flux densities.
 %    The resulting alpha-shape determines the loss map range. 
