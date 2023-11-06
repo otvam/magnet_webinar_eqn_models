@@ -16,7 +16,7 @@ This webinar focuses on equation-based loss models for soft-magnetic materials:
 ## Main Files
 
 * [slides.pdf](slides.pdf) - Slides of the webinar
-* [paper.pdf](paper.pdf) - Paper introducing the iGCC
+* [paper.pdf](paper.pdf) - APEC paper introducing the iGCC
 * [run_igse.m](run_igse.m) - Parametrize and evaluate the iGSE model
 * [run_igcc.m](run_igcc.m) - Parametrize and evaluate the iGCC model
 
@@ -32,8 +32,8 @@ This webinar focuses on equation-based loss models for soft-magnetic materials:
     * Dataset contained in [N87_25C_eval.mat](data/N87_25C_eval.mat)
 * Both datasets are extracted from the following repository:
     * Guillod, T. and Lee, J. S. and Li, H. and Wang, S. and Chen, M. and Sullivan, C. R.
-    * Calculation of Ferrite Core Losses with Arbitrary Waveforms using the Composite Waveform Hypothesis
-    * Reproducibility Dataset, Zenodo Repository, 2022
+    * Calculation of Ferrite Core Losses with Arbitrary Waveforms using the Composite Waveform Hypothesis: Reproducibility Dataset
+    * Zenodo Repository, 2022
     * [10.5281/zenodo.7368936](https://doi.org/10.5281/zenodo.7368936)
 
 ## Warnings
