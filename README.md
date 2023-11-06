@@ -16,6 +16,7 @@ This webinar focuses on equation-based loss models for soft-magnetic materials:
 ## Main Files
 
 * [slides.pdf](slides.pdf) - Slides of the webinar
+* [paper.pdf](paper.pdf) - Paper introducing the iGCC
 * [run_igse.m](run_igse.m) - Parametrize and evaluate the iGSE model
 * [run_igcc.m](run_igcc.m) - Parametrize and evaluate the iGCC model
 
