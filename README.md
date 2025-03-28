@@ -66,7 +66,7 @@ This webinar focuses on **equation-based loss models for soft-magnetic materials
 
 ## Author
 
-**Thomas Guillod** - [GitHub Profile](https://github.com/otvam)
+**Thomas Guillod, Dartmouth College** - [GitHub Profile](https://github.com/otvam)
 
 ## License
 
