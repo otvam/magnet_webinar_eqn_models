@@ -5,18 +5,24 @@
 This repository contains the **slides** and **code** related to the following **webinar**:
 * **2023 MagNet Challenge Webinar: Equation-based Baseline Models**
 * **IEEE PELS Webinar - May 12 2023**
-* **Thomas Guillod** - Dartmouth College
+* **Thomas Guillod - Dartmouth College**
 
-This webinar focuses on equation-based loss models for soft-magnetic materials:
-* Several models are presented (SE, iGSE, ISE, iGCC, and Stenglein equation).
+The **webinar** is based on the following **paper**:
+* **Calculation of Ferrite Core Losses with Arbitrary Waveforms using the Composite Waveform Hypothesis**
+* **Thomas Guillod, Jenna S. Lee, Haoran Li, Shukai Wang, Minjie Chen, and Charles R. Sullivan**
+* **https://doi.org/10.1109/APEC43580.2023.10131348**
+* **IEEE APEC 2023**
+
+This webinar focuses on **equation-based loss models for soft-magnetic materials**:
+* Several models are presented (SE, iGSE, iGCC, and Stenglein equation).
 * The model performances are evaluated for different frequencies, waveshapes, and temperatures.
 * The advantages and drawbacks of equation-based models and machine learning models are discussed.
 * A MATLAB implementation of the iGSE and iGCC is discussed in detail and the pitfalls are highlighted.
 
 ## Main Files
 
-* [slides.pdf](slides.pdf) - Slides of the webinar
-* [paper.pdf](paper.pdf) - APEC paper introducing the iGCC
+* [slides.pdf](slides.pdf) - Slides of the webinar (CC BY-ND 4.0)
+* [paper.pdf](paper.pdf) - APEC 2023 paper (IEEE copyright)
 * [run_igse.m](run_igse.m) - Parametrize and evaluate the iGSE model
 * [run_igcc.m](run_igcc.m) - Parametrize and evaluate the iGCC model
 
